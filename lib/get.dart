@@ -53,12 +53,17 @@ class _GetState extends State<Get> {
                             children: [
                               Text(abhi[index]["id"].toString()),
                               Text(abhi[index]["title"]),
-                              // ✅ Wrap image in try-catch with fallback
-                              Image.network(
-                                abhi[index]["url"],
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Image.network("https://picsum.photos/200");
-                                },
+                        
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20)
+                                ),
+                                child: Image.network(
+                                  abhi[index]["url"],
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Image.network("https://picsum.photos/200");
+                                  },
+                                ),
                               ),
                               const SizedBox(height: 10),
                               Image.network(
