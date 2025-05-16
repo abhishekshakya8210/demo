@@ -60,8 +60,7 @@ class _OtpPageState extends State<OtpPage> {
                   child: ListTile(
                     title: Text("Cart ID: ${paradox[index]['id']}"),
                     subtitle: Text("Total Price: \$${paradox[index]['total']}"),
-                    trailing:  Text("quantity Price: \$${paradox[index]['quantity']}"),
-                    leading: CircleAvatar(backgroundImage: NetworkImage('${paradox[index]['thumbnail']}'),),
+                    trailing:  Text("quantity Price: \$${paradox[index]['quantity']}")
                   ),
                 );
               },

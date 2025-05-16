@@ -1,6 +1,8 @@
+import 'package:demo/count.dart';
 import 'package:demo/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +14,16 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-     debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_)=>ChatProvider()),
+    ],
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:MyHomePage() ,
+
+    ),
     );
+   
   }
 }
 
